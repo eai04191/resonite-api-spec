@@ -1,0 +1,4 @@
+title: UserTag
+type: array
+items:
+  type: string

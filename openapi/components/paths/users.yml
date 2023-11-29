@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: /users
+  version: 0.0.0
+paths:
+  /users:
+    get:
+      summary: Search All Users
+      tags:
+        - users
+      operationId: searchUsers
+      responses:
+        '200':
+          description: OK
+  '/users/{userId}/contacts':
+    get:
+      summary: Get user contacts
+      tags:
+        - users
+      operationId: getUserContacts
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: The user ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '../schemas/Contact.yml'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+      description: |-
+        Retrieve the list of contacts for the user.

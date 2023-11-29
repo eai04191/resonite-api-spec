@@ -1,0 +1,40 @@
+openapi: 3.0.3
+info:
+  title: /userSessions
+  version: 0.0.0
+paths:
+  /userSessions:
+    post:
+      summary: Create a user session
+      tags:
+        - userSessions
+      operationId: createUserSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../requests/UserSessionsRequest.yml'
+      responses:
+        '200':
+          $ref: '../responses/UserSessionsResponse.yml'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: UID
+          required: true
+          description: |-
+            ```js
+            sha256(s) {
+              const hash = crypto.createHash("sha256");
+              hash.update(s);
+              return hash.digest().toString("hex");
+            }
+            ```
+      description: |-
+        Login to the Resonite service and create a user session.

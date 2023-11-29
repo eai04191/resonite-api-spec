@@ -1,0 +1,27 @@
+on: [push, pull_request]
+
+name: CI
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    name: Format check
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install Dependencies
+        run: bun install
+      - name: Run Prettier format check
+        run: bun run format:check
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint OpenAPI specification
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install Dependencies
+        run: bun install
+      - name: Run Spectral linting
+        run: bun run lint

@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: /sessions
+  version: 0.0.0
+paths:
+  /sessions:
+    get:
+      summary: Get All Sessions
+      tags:
+        - sessions
+      operationId: getAllSessions
+      parameters:
+        - $ref: '../parameters.yml#/includeEmptyHeadless'
+        - $ref: '../parameters.yml#/minActiveUsers'
+      responses:
+        '200':
+          $ref: '../responses/sessions/GetAllSessionsResponse.yml'
+      description: |-
+        Returns a list of sessions.
+  /sessions/{sessionId}:
+    get:
+      summary: Get a Session
+      tags:
+        - sessions
+      operationId: getSession
+      parameters:
+        - $ref: '../parameters.yml#/sessionId'
+      responses:
+        '200':
+          $ref: '../responses/sessions/GetSessionResponse.yml'
+      description: |-
+        Returns a session.

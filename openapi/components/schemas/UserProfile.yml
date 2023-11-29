@@ -1,0 +1,15 @@
+title: UserProfile
+type: object
+properties:
+  iconUrl:
+    type: string
+  tagline:
+    type: string
+  displayBadges:
+    type: array
+    items:
+      $ref: './UserBadge.yml'
+  description:
+    type: string
+required:
+  - displayBadges

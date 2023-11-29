@@ -1,0 +1,10 @@
+title: CorrespondingWorldId
+type: object
+properties:
+  recordId:
+    type: string
+  ownerId:
+    type: string
+required:
+  - recordId
+  - ownerId

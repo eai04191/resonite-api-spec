@@ -1,0 +1,35 @@
+title: User
+type: object
+properties:
+  id:
+    type: string
+  username:
+    type: string
+  normalizedUsername:
+    type: string
+  registrationDate:
+    type: string
+    format: date-time
+  isVerified:
+    type: boolean
+  isLocked:
+    type: boolean
+  supressBanEvasion:
+    type: boolean
+  2fa_login:
+    type: boolean
+  tags:
+    $ref: ./UserTag.yml
+  profile:
+    $ref: ./UserProfile.yml
+  migratedData:
+    $ref: ./UserMigratedData.yml
+required:
+  - id
+  - username
+  - normalizedUsername
+  - registrationDate
+  - isVerified
+  - isLocked
+  - supressBanEvasion
+  - 2fa_login

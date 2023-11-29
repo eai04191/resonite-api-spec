@@ -1,0 +1,5 @@
+description: Returns a list of sessions.
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/Session.yml'

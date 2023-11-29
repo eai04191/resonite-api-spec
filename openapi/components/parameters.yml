@@ -1,0 +1,19 @@
+includeEmptyHeadless:
+  name: includeEmptyHeadless
+  in: query
+  schema:
+    type: boolean
+  description: Include empty headless sessions
+minActiveUsers:
+  name: minActiveUsers
+  in: query
+  schema:
+    type: number
+  description: Minimum number of active users
+sessionId:
+  name: sessionId
+  in: path
+  required: true
+  schema:
+    type: string
+  description: The session ID

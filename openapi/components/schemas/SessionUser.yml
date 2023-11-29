@@ -1,0 +1,19 @@
+title: SessionUser
+type: object
+properties:
+  username:
+    type: string
+  userID:
+    type: string
+  isPresent:
+    type: boolean
+    description: |
+      Whether the user is currently in the session.
+  outputDevice:
+    type: number
+    description: |
+      The output device of the user.
+      Headless users will not have this property.
+required:
+  - username
+  - isPresent

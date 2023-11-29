@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: Unofficial Resonite API Documentation
+  version: 0.0.0
+  termsOfService: 'https://resonite.com/policies/TermsOfService.html'
+  contact:
+    name: Eai
+    url: 'https://github.com/eai04191'
+    email: eai@mizle.net
+  license:
+    url: 'https://github.com/eai04191/resonite-api-spec/blob/main/LICENSE'
+    name: MIT
+  description: |-
+    Unofficial community-driven OpenAPI specification for [Resonite](https://resonite.com/) API.
+servers:
+  - url: 'https://api.resonite.com'
+    description: Official Resonite API server
+paths:
+  '/sessions':
+    $ref: './components/paths/sessions.yml#/paths/~1sessions'
+  '/sessions/{sessionId}':
+    $ref: './components/paths/sessions.yml#/paths/~1sessions~1{sessionId}'
+  '/users':
+    $ref: './components/paths/users.yml#/paths/~1users'
+  '/users/{userId}/contacts':
+    $ref: './components/paths/users.yml#/paths/~1users~1{userId}~1contacts'
+  '/userSessions':
+    $ref: './components/paths/userSessions.yml#/paths/~1userSessions'
+tags:
+  - name: sessions
+    description: Sessions
+  - name: users
+    description: Users
+  - name: userSessions
+    description: User Sessions

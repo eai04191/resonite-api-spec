@@ -1,0 +1,9 @@
+title: Contact
+type: object
+properties:
+  contactId:
+    type: string
+    description: The contact's user ID
+  username:
+    type: string
+    description: The contact's username

@@ -1,0 +1,31 @@
+title: UserMigratedData
+type: object
+properties:
+  username:
+    type: string
+  userId:
+    type: string
+  quotaBytes:
+    type: number
+  usedBytes:
+    type: number
+  quotaBytesSources:
+    type: object
+    properties:
+      base:
+        type: number
+      patreon:
+        type: number
+      paid:
+        type: number
+      mmc21_honorary:
+        type: number
+  registrationDate:
+    type: string
+    format: date-time
+required:
+  - username
+  - userId
+  - quotaBytes
+  - usedBytes
+  - registrationDate

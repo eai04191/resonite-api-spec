@@ -1,0 +1,17 @@
+{
+    "name": "resonite-api-spec",
+    "version": "1.0.0",
+    "description": "Unofficial community-driven OpenAPI specification for Resonite API",
+    "scripts": {
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "lint": "spectral lint ./openapi/openapi.yml",
+        "preview": "browser-sync start --server --index preview.html --no-ui --listen localhost --files \"**/*yml\""
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@stoplight/spectral-cli": "^6.11.0",
+        "browser-sync": "^2.29.3",
+        "prettier": "^3.1.0"
+    }
+}

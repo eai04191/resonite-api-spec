@@ -1,0 +1,25 @@
+title: UserSession
+type: object
+properties:
+  userId:
+    type: string
+    description: The user ID
+  token:
+    type: string
+    description: The authentication token
+  secretMachineIdHash:
+    type: string
+    description: The hashed machine ID
+  secretMachineIdSalt:
+    type: string
+    description: The salt for the machine ID hash
+  expire:
+    type: string
+    format: date-time
+    description: Expiration time of the token
+required:
+  - userId
+  - token
+  - secretMachineIdHash
+  - secretMachineIdSalt
+  - expire

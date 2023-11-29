@@ -1,0 +1,115 @@
+title: Session
+type: object
+properties:
+  name:
+    type: string
+    description: 'May contain rich text tags for TextMeshPro, such as HTML'
+  description:
+    type: string
+    description: 'May contain rich text tags for TextMeshPro, such as HTML'
+  correspondingWorldId:
+    $ref: ./SessionCorrespondingWorldId.yml
+  tags:
+    type: array
+    items:
+      type: string
+  sessionId:
+    type: string
+  normalizedSessionId:
+    type: string
+  hostUserId:
+    type: string
+    description: |
+      when the host is not a registered user, this is undefined?
+  hostUserSessionId:
+    type: string
+    format: uuid
+  hostMachineId:
+    type: string
+  hostUsername:
+    type: string
+  compatibilityHash:
+    type: string
+  appVersion:
+    type: string
+  headlessHost:
+    type: boolean
+  sessionURLs:
+    type: array
+    items:
+      type: string
+      format: uri
+  parentSessionIds:
+    type: array
+    items:
+      type: string
+  nestedSessionIds:
+    type: array
+    items:
+      type: string
+  sessionUsers:
+    type: array
+    items:
+      $ref: ./SessionUser.yml
+  thumbnailUrl:
+    type: string
+    format: uri
+  joinedUsers:
+    type: integer
+  activeUsers:
+    type: integer
+  totalJoinedUsers:
+    type: integer
+  totalActiveUsers:
+    type: integer
+  maxUsers:
+    type: integer
+  mobileFriendly:
+    type: boolean
+  sessionBeginTime:
+    type: string
+    format: date-time
+  lastUpdate:
+    type: string
+    format: date-time
+  accessLevel:
+    type: string
+    enum:
+      - Anyone
+      - RegisteredUsers
+  hideFromListing:
+    type: boolean
+  hasEnded:
+    type: boolean
+  isValid:
+    type: boolean
+  universeId:
+    type: string
+required:
+  - name
+  - tags
+  - sessionId
+  - normalizedSessionId
+  - hostUserSessionId
+  - hostMachineId
+  - hostUsername
+  - compatibilityHash
+  - appVersion
+  - headlessHost
+  - sessionURLs
+  - parentSessionIds
+  - nestedSessionIds
+  - sessionUsers
+  - thumbnailUrl
+  - joinedUsers
+  - activeUsers
+  - totalJoinedUsers
+  - totalActiveUsers
+  - maxUsers
+  - mobileFriendly
+  - sessionBeginTime
+  - lastUpdate
+  - accessLevel
+  - hideFromListing
+  - hasEnded
+  - isValid

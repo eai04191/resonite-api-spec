@@ -1,0 +1,7 @@
+title: UserBadge
+type: object
+properties:
+  id:
+    type: string
+  ownerId:
+    type: string

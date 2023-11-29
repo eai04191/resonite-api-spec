@@ -1,0 +1,24 @@
+title: UserSessionsRequest
+type: object
+properties:
+  username:
+    type: string
+    description: The username of the account
+  password:
+    type: string
+    description: The password of the account
+  rememberMe:
+    type: boolean
+    description: Flag to remember the user on this device
+  machineId:
+    type: string
+    description: |-
+      A unique identifier for the machine
+      ```js
+      // example to generate
+      crypto.randomBytes(32).toString("base64url");
+      ```
+required:
+  - username
+  - password
+  - machineId
