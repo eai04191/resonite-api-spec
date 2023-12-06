@@ -20,10 +20,12 @@ properties:
   hostUserId:
     type: string
     description: |
-      when the host is not a registered user, this is undefined?
+      If the host is not a registered user, this is undefined.
   hostUserSessionId:
     type: string
     format: uuid
+    description: |
+      If the host is not a registered user, this is undefined.
   hostMachineId:
     type: string
   hostUsername:
@@ -90,7 +92,6 @@ required:
   - tags
   - sessionId
   - normalizedSessionId
-  - hostUserSessionId
   - hostMachineId
   - hostUsername
   - compatibilityHash
