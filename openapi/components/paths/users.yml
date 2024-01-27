@@ -5,38 +5,48 @@ info:
 paths:
   /users:
     get:
-      summary: Search All Users
+      summary: Search Users by username
       tags:
         - users
       operationId: searchUsers
+      parameters:
+        - $ref: '../parameters.yml#/name'
       responses:
         '200':
-          description: OK
-  '/users/{userId}/contacts':
+          $ref: '../responses/users/SearchUsersResponse.yml'
+      description: |-
+        Returns a list of users.
+  /users/{userId}:
     get:
-      summary: Get user contacts
+      summary: Get User by User ID
+      tags:
+        - users
+      operationId: getUser
+      parameters:
+        - $ref: '../parameters.yml#/userId'
+      responses:
+        '200':
+          $ref: '../responses/users/GetUserResponse.yml'
+        '400':
+          description: Invalid user ID
+        '404':
+          description: User not found
+      description: |-
+        Returns a single user.
+  /users/{userId}/contacts:
+    get:
+      summary: Get User Contacts
       tags:
         - users
       operationId: getUserContacts
+      security:
+        - resAuth: []
       parameters:
-        - name: userId
-          in: path
-          required: true
-          description: The user ID
-          schema:
-            type: string
+        - $ref: '../parameters.yml#/userId'
       responses:
         '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '../schemas/Contact.yml'
-        '400':
-          description: Bad Request
+          $ref: '../responses/users/GetUserContactsResponse.yml'
         '401':
           description: Unauthorized
       description: |-
-        Retrieve the list of contacts for the user.
+        Retrieve the list of contacts for the user. Used to get your own contact list.

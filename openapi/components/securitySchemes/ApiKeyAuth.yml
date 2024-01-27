@@ -1,0 +1,8 @@
+ResoniteApiKeyAuth:
+  type: apiKey
+  name: Authorization
+  in: header
+  description: |
+    Authentication token created with the token obtained from POST /userSessions
+    The format is res {userId}:{token}
+  example: 'Authorization: res U-Eai:OuDe72hhgkpN4o3EQ9xw7rKE5Oe9XJHsXk_bhW1hORYOXcm4oOYcGZej+FqQEx4paeieLFLN+bBUa2RP5+SckEAluLh+DPdJ2_YVcZeoNcbj8xoOlUmND6HtI_EOd1JRAUuw3hUOFog8sC3m6_cAASOFiwLMBHxlBsnklxjkuGM='

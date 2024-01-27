@@ -17,3 +17,18 @@ sessionId:
   schema:
     type: string
   description: The session ID
+userId:
+  name: userId
+  in: path
+  required: true
+  schema:
+    type: string
+  description: The user ID. Should start with `U-`.
+  example: 'U-Eai'
+name:
+  name: name
+  in: query
+  schema:
+    type: string
+  description: The username to search.
+  example: 'Eai'

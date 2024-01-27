@@ -1,24 +1,32 @@
 title: UserSessionsRequest
 type: object
 properties:
+  ownerId:
+    type: string
+    nullable: true
+    default: null
   username:
     type: string
-    description: The username of the account
-  password:
+    nullable: true
+    description: Maybe you need either `username` or `email`.
+  email:
     type: string
-    description: The password of the account
+    nullable: true
+    description: Maybe you need either `username` or `email`.
+  authentication:
+    oneOf:
+      - $ref: ../schemas/UserSessionAuthenticationPassword.yml
+      - $ref: ../schemas/UserSessionAuthenticationSessionToken.yml
+  secretMachineId:
+    type: string
+    description: Maybe any hex value is allowed. e.g. `a`.
   rememberMe:
     type: boolean
-    description: Flag to remember the user on this device
-  machineId:
-    type: string
+    default: false
     description: |-
-      A unique identifier for the machine
-      ```js
-      // example to generate
-      crypto.randomBytes(32).toString("base64url");
-      ```
+      If set to `true`, a token valid for one month will be issued.
+      If set to `false`, a token valid for one day will be issued.
 required:
-  - username
-  - password
-  - machineId
+  - authentication
+  - secretMachineId
+  - rememberMe

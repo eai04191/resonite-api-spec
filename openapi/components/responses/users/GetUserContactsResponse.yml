@@ -1,0 +1,7 @@
+description: Returns a list of contacts.
+content:
+  application/json:
+    schema:
+      type: array
+      items:
+        $ref: '../../schemas/Contact.yml'

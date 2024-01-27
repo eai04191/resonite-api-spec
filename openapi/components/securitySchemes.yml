@@ -1,0 +1,12 @@
+resAuth:
+  type: apiKey
+  name: Authorization
+  in: header
+  description: |
+    Authentication token created with the `entity.token` obtained from `POST /userSessions`.
+
+    The format is `res {userId}:{token}`
+
+    ```
+    Authorization: res U-Eai:bBCAMY2+vqmkZcUoJX6lLhDtRMWXtYndzuYfTPogb0jpj9lCKbswm1g2J9RqlegCiyep5P4nY23ytoMuV3JNqQGhCPkfVOdG0ZytC4rll3Ps2IuHKr5e3oUkwQBdBVu2nqZdYiQGL0VNFS5neCQSNkZjTAUxdzwrzci/rsY=
+    ```

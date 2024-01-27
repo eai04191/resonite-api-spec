@@ -1,0 +1,45 @@
+title: UserSessionResultEntity
+type: object
+properties:
+  userId:
+    type: string
+  token:
+    type: string
+  created:
+    type: string
+    format: date-time
+  expire:
+    type: string
+    format: date-time
+  remenberMe:
+    type: boolean
+  secretMachineIdHash:
+    type: string
+  secretMachineIdSalt:
+    type: string
+  logoutUrlClientSide:
+    type: boolean
+  sessionLoginCounter:
+    type: number
+  sourceIP:
+    type: string
+  partitionKey:
+    type: string
+  rowKey:
+    type: string
+  eTag:
+    type: string
+    nullable: true
+required:
+  - userId
+  - token
+  - created
+  - expire
+  - remenberMe
+  - secretMachineIdHash
+  - secretMachineIdSalt
+  - logoutUrlClientSide
+  - sessionLoginCounter
+  - sourceIP
+  - partitionKey
+  - rowKey

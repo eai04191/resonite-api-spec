@@ -29,12 +29,6 @@ paths:
           name: UID
           required: true
           description: |-
-            ```js
-            sha256(s) {
-              const hash = crypto.createHash("sha256");
-              hash.update(s);
-              return hash.digest().toString("hex");
-            }
-            ```
+            Maybe any hex value is allowed. e.g. `a`.
       description: |-
         Login to the Resonite service and create a user session.

@@ -1,0 +1,15 @@
+title: UserSessionAuthenticationSessionToken
+type: object
+properties:
+  '$type':
+    type: string
+    enum:
+      - sessionToken
+  isValid:
+    type: boolean
+  sessionToken:
+    type: string
+required:
+  - '$type'
+  - isValid
+  - sessionToken

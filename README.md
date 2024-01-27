@@ -7,12 +7,10 @@ Unofficial community-driven OpenAPI specification for [Resonite](https://resonit
 Start a local server to preview the documentation using [Stoplight Elements](https://docs.stoplight.io/docs/elements/d6a8ba3f3c186-stoplight-elements). This server does a live-reload when you make changes to yaml files. Sweet!
 
 ```
-npm run preview
+npm run start
 ```
 
-> [!TIP]
-> The Resonite API server is not configured with CORS to allow all origins, so if you want to test the requests in the document, you will need to use a proxy or browser extension to unblock CORS restriction.
-> [CORS Unblock](https://webextension.org/listing/access-control.html) is a one good choice.
+The local proxy starts on port 8010 and Stoplight Elements starts on port 8081. A local proxy is required to avoid CORS errors and send requests from Stoplight Elements.
 
 ## License
 
