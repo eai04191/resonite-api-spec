@@ -1,9 +1,30 @@
 title: Contact
 type: object
 properties:
-  contactId:
+  id:
     type: string
     description: The contact's user ID
-  username:
+  contactUsername:
     type: string
     description: The contact's username
+  contactStatus:
+    type: string
+    enum:
+      - Accepted
+    description: |-
+      The contact's status
+      This property appears to be `Accepted` even though the request to add a contact has not been accepted. Check `isAccepted` to see if the request was actually accepted.
+  isAccepted:
+    type: boolean
+    description: The request to add a contact was accepted.
+  latestMessageTime:
+    type: string
+    format: date-time
+  isMigrated:
+    type: boolean
+    description: This may indicate that the contact was migrated from an old platform.
+  isCounterpartMigrated:
+    type: boolean
+  owner:
+    type: string
+    description: This is the userId you included in your query when making the request.
