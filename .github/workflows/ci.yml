@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Format check
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
       - name: Install Dependencies
@@ -18,10 +18,42 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint OpenAPI specification
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
       - name: Install Dependencies
         run: bun install
       - name: Run Spectral linting
         run: bun run lint
+  bundle:
+    needs: [format-check, lint]
+    runs-on: ubuntu-latest
+    name: Bundle OpenAPI specification to single file
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install Dependencies
+        run: bun install
+      - name: Bundle OpenAPI specification
+        run: bun run bundle
+      - name: Upload Bundled Specification to Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy-pages:
+    # Only if main branch
+    if: github.ref == 'refs/heads/main'
+    needs: bundle
+    permissions:
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    name: Generate Pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

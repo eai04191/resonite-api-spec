@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Unofficial community-driven OpenAPI specification for Resonite API",
     "scripts": {
+        "bundle": "redocly bundle ./openapi/openapi.yml -o ./dist/openapi.yml",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "lint": "spectral lint ./openapi/openapi.yml",
@@ -12,6 +13,7 @@
     },
     "license": "MIT",
     "devDependencies": {
+        "@redocly/cli": "^1.8.0",
         "@stoplight/spectral-cli": "^6.11.0",
         "browser-sync": "^3.0.2",
         "cross-env": "^7.0.3",
