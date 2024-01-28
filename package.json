@@ -6,7 +6,7 @@
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "lint": "spectral lint ./openapi/openapi.yml",
-        "start": "npm-run-all --parallel start:*",
+        "start": "cross-env FORCE_COLOR=1 npm-run-all --print-label --parallel start:*",
         "start:preview": "browser-sync start --server --index preview.html --no-ui --port 8011 --listen localhost --files \"**/*yml\"",
         "start:proxy": "lcp --proxyUrl https://api.resonite.com --origin http://localhost:8011 --port 8010"
     },
@@ -14,6 +14,7 @@
     "devDependencies": {
         "@stoplight/spectral-cli": "^6.11.0",
         "browser-sync": "^3.0.2",
+        "cross-env": "^7.0.3",
         "local-cors-proxy": "^1.1.0",
         "npm-run-all": "^4.1.5",
         "prettier": "^3.2.4"
