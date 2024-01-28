@@ -13,10 +13,10 @@ info:
   description: |-
     Unofficial community-driven OpenAPI specification for [Resonite](https://resonite.com/) API.
 servers:
-  - url: 'https://api.resonite.com'
-    description: Official Resonite API server
   - url: 'http://localhost:8010/proxy'
     description: Local Proxy
+  - url: 'https://api.resonite.com'
+    description: Official Resonite API server
 paths:
   '/sessions':
     $ref: './components/paths/sessions.yml#/paths/~1sessions'
