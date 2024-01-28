@@ -57,3 +57,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+  trigger-remote-release-ci:
+    needs: deploy-pages
+    runs-on: ubuntu-latest
+    name: Trigger Remote Release CI
+    steps:
+      - name: Trigger Remote Release CI
+        run: |
+          curl -X POST https://api.github.com/repos/eai04191/resonite-api-types/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.ACCESS_TOKEN }} \
+          --data '{"event_type": "spec_release"}'
