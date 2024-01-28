@@ -1,4 +1,4 @@
-title: UserSessionResultConfigFile
+title: UserSessionConfigFile
 type: object
 properties:
   path:

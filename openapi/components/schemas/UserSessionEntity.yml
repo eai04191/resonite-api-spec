@@ -1,4 +1,4 @@
-title: UserSessionResultEntity
+title: UserSessionEntity
 type: object
 properties:
   userId:

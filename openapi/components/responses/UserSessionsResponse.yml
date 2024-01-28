@@ -2,4 +2,4 @@ description: OK
 content:
   application/json:
     schema:
-      $ref: '../schemas/UserSessionResult.yml'
+      $ref: '../schemas/UserSession.yml'

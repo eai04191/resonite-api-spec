@@ -2,10 +2,10 @@ title: UserSession
 type: object
 properties:
   entity:
-    $ref: './UserSessionResultEntity.yml'
+    $ref: './UserSessionEntity.yml'
   configFiles:
     type: array
     items:
-      $ref: './UserSessionResultConfigFile.yml'
+      $ref: './UserSessionConfigFile.yml'
 required:
   - entity
