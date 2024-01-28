@@ -17,6 +17,7 @@ rules:
   info-license: off
   license-url: off
   oas3-api-servers: off
+  oas3-operation-security-defined: off
 
   schema-title:
     given: '$.components.schemas[*]'
