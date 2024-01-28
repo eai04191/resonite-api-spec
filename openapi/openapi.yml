@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Unofficial Resonite API Documentation
-  version: 0.0.1
+  version: 0.0.2
   termsOfService: 'https://resonite.com/policies/TermsOfService.html'
   contact:
     name: Eai
@@ -13,8 +13,6 @@ info:
   description: |-
     Unofficial community-driven OpenAPI specification for [Resonite](https://resonite.com/) API.
 servers:
-  - url: 'http://localhost:8010/proxy'
-    description: Local Proxy
   - url: 'https://api.resonite.com'
     description: Official Resonite API server
 paths:
